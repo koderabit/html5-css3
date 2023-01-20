@@ -1,0 +1,17 @@
+body{
+    font-weight: normal;
+    background-image: linear-gradient(to right, rgb(191, 191, 255), rgb(112, 112, 255));
+}
+h1, h2{
+    /* shorthand font: ordem abaixo
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font: italic bolder Verdana, Geneva, Tahoma, sans-serif; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.425);
+    
+}
+p{
+    margin-top: 0px;
+}

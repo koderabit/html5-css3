@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+/*
+font-family: 'Comfortaa', cursive;
+*/
+h1,h2{
+    font-family: 'Comfortaa', cursive;
+}
+p{
+    font-family: 'Comfortaa', cursive;
+}
+
+body{
+    background-image: linear-gradient(to right, rgb(231, 231, 231), rgba(139, 139, 139, 0.5));
+    width: 80vw;
+    text-align: justify;
+    margin: auto;
+}
