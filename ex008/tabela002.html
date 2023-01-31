@@ -6,9 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelas</title>
     <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
         table{
             width: 80vw;
             border-collapse: collapse;
+            position: relative;
+        }
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
         }
         thead th, tfoot {
             border: 1px solid black;
@@ -19,6 +31,11 @@
             font-size: 1.2em; 
         }
 
+        thead > tr > th {
+            position: sticky;
+            top: -1px;
+        }
+
         td {
             border: 1px solid black;
             padding: 8px;
@@ -26,6 +43,10 @@
 
         .num{
             text-align: right;
+        }
+
+        tbody > tr:nth-child(even) {
+            background-color: rgb(207, 221, 235);
         }
     </style>
 </head>
@@ -43,10 +64,11 @@
         </table>        
     -->
     <table>
+        <caption>População das Unidades Federativas.</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col">População</th>
             </tr>
         </thead>
 
@@ -190,7 +212,7 @@
 
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
+                <th scope="row">Total de Habitantes</th>
                 <td class="num"><strong>210.147.125</strong></td>
             </tr>
         </tfoot>
