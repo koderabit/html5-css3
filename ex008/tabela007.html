@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            padding: 8px;
+            width: 125px;
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+            background-color: antiquewhite;
+        }
+
+        .linha-colorida td {
+            background-color: blanchedalmond;
+        }
+
+        .rodapeMedia {
+            background-color: rgb(255, 182, 86);
+            text-align: center;
+        }
+
+        .negrito {
+            font-weight: bold;
+            text-align: end;
+        }
+
+        /* tr:nth-child(even){
+            background-color: #f0f0f0;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1>Desafio cap 21 - aula 10</h1>
+    <table>
+        <caption>
+            Notas por Disciplina
+        </caption>
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col class="negrito">
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2" scope="col">Área</th>
+                <th rowspan="2" scope="col">Disciplina</th>
+                <th colspan="2" scope="col">Notas</th>
+                <th rowspan="2" scope="col">Média</th>
+            </tr>
+            <tr>
+                <th scope="col">Nota 1</th>
+                <th scope="col">Nota 2</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+            <tr>
+                <th rowspan="4" scope="rowgroup">Exatas</th>
+                <td>Matemática</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+            </tr>
+
+            <tr>
+                <td>Física</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+            </tr>
+            <tr>
+                <td>Química</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+            </tr>
+            <tr>
+                <td>Estatística</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+            </tr>
+            <tr class="rodapeMedia">
+                <td colspan="4">Média de exatas</td>
+                <td>0.0</td>
+
+            </tr>
+            <tr>
+                <th rowspan="2" scope="rowgroup">Humanas</th>
+                <td>História</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+            </tr>
+            <tr>
+                <td>Geografia</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+            </tr>
+            <tr class="rodapeMedia">
+                <td colspan="4">Média de humanas</td>
+                <td>0.0</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        const linhas = document.getElementById("tbody").children;
+        for (let i = 0; i < linhas.length; i++) {
+            const linha = linhas[i];
+
+            if (linha.classList.contains("rodapeMedia")) {
+                continue;
+            }
+
+            if (i % 2 !== 0) {
+                linha.classList.add("linha-colorida");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            padding: 8px;
+            width: 125px;
+        }
+
+        th {
+            text-align: center;
+            background-color: antiquewhite;
+        }
+
+        .linha-colorida td {
+            background-color: blanchedalmond;
+        }
+
+        /* tr:nth-child(even){
+            background-color: #f0f0f0;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1>Desafio cap 21 - aula 10</h1>
+    <table>
+        <caption>
+            Relação de animais domésticos
+        </caption>
+        <thead>
+            <tr>
+                <th scope="col">Animal</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cor</th>
+                <th scope="col">Sexo</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <th rowspan="8" scope="rowgroup">Gato</th>
+                <td>Cristiano Ronaldo</td>
+                <td>Siamês</td>
+                <td>Macho</td>
+            </tr>
+
+            <tr>
+                <td>Jonathan</td>
+                <td>Preto e Branco</td>
+                <td>Macho</td>
+            </tr>
+            <tr>
+                <td>Máscara</td>
+                <td>Preto e Branco</td>
+                <td>Fêmea</td>
+            </tr>
+            <tr>
+                <td>Perneta</td>
+                <td>Preto e Branco</td>
+                <td>Fêmea</td>
+            </tr>
+            <tr>
+                <td>Polar</td>
+                <td>Preto e Branco</td>
+                <td>Fêmea</td>
+            </tr>
+            <tr>
+                <td>Poti</td>
+                <td>Preto e Branco</td>
+                <td>Macho</td>
+            </tr>
+            <tr>
+                <td>Puma</td>
+                <td>Preto</td>
+                <td>Fêmea</td>
+            </tr>
+            <tr>
+                <td>Zoiúda</td>
+                <td>Preto</td>
+                <td>Fêmea</td>
+            </tr>
+            <tr>
+                <th scope="row">Cachorro</th>
+                <td>Lisa</td>
+                <td>Marrom</td>
+                <td>Fêmea</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        const linhas = document.getElementById("tbody").children;
+        for (let i = 0; i < linhas.length; i++) {
+            const linha = linhas[i];
+            if (i % 2 !== 0) {
+                linha.classList.add("linha-colorida");
+            }
+        }
+    </script>
+</body>
+
+</html>
